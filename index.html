@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Beat Classification</title>
+    <link href="http://127.0.0.1:5000/" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+	<div id="website_head">
+		<h1>Heart and Lung Sounds Classification system</h1>
+	</div>
+
+	<div>
+		<img src="Images/img1.jpg">
+	</div>
+
+	<div>
+		<h1 class="header">Welcome to our system</h1>
+		<div>
+			<p class="text_pra1">
+				Welcome to our system, in this system we clssify heart sounds to normal, artifact(noisy sound) or murmur (Unnormal sounds which in this case you should make some exmanation).
+				Also, we can clssify the lung sounds to normal on unnormal sound.
+			</p>
+		</div>
+	</div>
+    
+<div id="speechContainer">
+    <h1>Upload new File</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file"/>
+        <br>
+        <div>
+        <input type="submit" id="submitButton" value="Predict"/>
+        </div>    
+    </form>
+
+    {% if prediction != "" %}
+        <div id="speechTranscriptContainer">
+            <h1>Result:</h1>
+            <p id="speechText">{{ prediction }}</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
